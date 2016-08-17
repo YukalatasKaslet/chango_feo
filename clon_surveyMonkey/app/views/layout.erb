@@ -17,12 +17,19 @@
   <title></title>
 </head>
 <body>
-  <div class="container">
+  <nav class="nav_bar">
     <% if current_user %>
-      <a href="/logout">Logout</a>
+    <div id="login_sing">
+      <a class="login_sing" href="/logout">Logout</a>|<a  class="login_sing" href="/users/<%= current_user.id%>">Profile</a>
+    </div>
     <% else %>
-      <a href="/login">Login</a> | <a href="/signup">Signup</a><br>
+    <div id="login_sing">
+      <a class="login_sing" href="/login">Login</a>|<a  class="login_sing" href="/signup">Signup</a>
+    </div>
+    <br>
     <%end%>
+  </nav>
+  <div class="container">
     <%= yield %>
   </div>
 </body>

@@ -47,6 +47,7 @@ th {
   /* background: linear-gradient(rgba(150,7,255,0.2), rgba(255,255,255,0.3), rgba(255,255,255,1)); */
   color: #330099;
   background: transparent;
+  /* rosita #FF70FF */
   /* lilita #9670FF */
   /* verde claritoup  #50FF90*/
   /* background: linear-gradient(#FFFFFF, rgba(150,112,255,0.4)); */
@@ -102,6 +103,20 @@ a:active {
   color: black;
 }
 
+.login_sing{
+  font-size: 1.8em;
+  margin: 0 auto;
+  padding: 0px 8px;
+}
 #login_sing{
-  font-size: 2.2em;
+  float: right;
+}
+
+.nav_bar{
+  margin: 0 auto;
+  height: 30px;
+  background-color: #9607FF;
+  background: linear-gradient( #FFFFFF, rgba(150,7,255,0.4)); /* Standard syntax */ 
+  font-family: monospace;
+  color: white;
 }
