@@ -1,0 +1,15 @@
+<div id="div_hide" >
+  <form action="/survey/<%= @survey.id %>" method="POST" >
+    <input type="hidden" name="_method" value="PUT">
+    Nombre:<br>
+    <input type="text"      name="survey[name]"><br>
+    <input  class="chulada_btn" type="submit" value="Editame!">    
+   </form>
+</div>
+
+<div>
+  <form action="/survey/<%= @survey.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input  class="chulada_btn" type="submit" value="Borrar!">
+  </form>
+</div>

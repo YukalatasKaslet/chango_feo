@@ -1,4 +1,13 @@
-  <h1>Bienvenido a Sinatra!</h1>
-  <p>Este es un esqueleto de sinatra que armamos para ti</p>
-
-  
+<% if current_user %>
+Usuario:<%= current_user.name %><br>
+<a href="/users/<%= current_user.id %>">Volver al Perfil</a>
+<% end %>
+<div>
+  <% if @survey %>
+  <ul>
+    <% @survey.each do |s| %>
+    <li>@s.name</li>
+    <% end %>
+  </ul>
+  <% end %>  
+</div>  

@@ -1,0 +1,22 @@
+<div>
+  <strong><%= @survey.name %></strong>
+  <ul>
+  <% @questions.each do |q| %>
+    <li><%= q.body %></li>
+    <% answers = q.answers %>
+      <ul>
+        <% answers.each do |a| %>
+        <li><%= a.body %></li>
+        <% end %>
+      </ul>
+  <br>
+  <br>      
+  <% end %>
+  </ul>
+</div>
+<div id="clear"></div>
+<p>Editar encuesta </p>
+<p id="show" class="chulada_btn"> Mostrar Formulario </p>
+<p id="hide" class="chulada_btn"></p>
+<br>
+<%= erb :'survey/_edit', :layout => false %>
