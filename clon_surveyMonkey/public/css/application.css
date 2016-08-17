@@ -2,7 +2,9 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  /* border: 1px dotted black; */
+  border-radius: 8px;
+  background: linear-gradient(#FFFFFF, rgba(150,7,255,0.4)); /* Standard syntax */
 }
 th {
   text-align: left;
@@ -28,7 +30,7 @@ th {
   border-radius: 5px; 
 } 
 
-#form_submit form textarea {
+#form_submit form textarea{
   
   margin: 15px 10px;
   width: 95%;
@@ -116,7 +118,7 @@ a:active {
   margin: 0 auto;
   height: 30px;
   background-color: #9607FF;
-  background: linear-gradient( #FFFFFF, rgba(150,7,255,0.4)); /* Standard syntax */ 
+  background: linear-gradient( rgba(150,7,255,0.4), #FFFFFF); /* Standard syntax */ 
   font-family: monospace;
   color: white;
 }
