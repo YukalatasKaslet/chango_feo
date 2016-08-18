@@ -15,17 +15,17 @@
   </ul>
 </div>
 <div id="clear"></div>
-
-<input class="chulada_btn" type="button" value="Add a question" class="add" id="add" />
+<input id="add" class="chulada_btn add" type="button" value="Añade una Pregunta!">
 <div id="clear"></div>
+<form action="/new_question/<%= @survey.id%>" method="POST">
   <fieldset id="add_field">
-      <legend>Añade una Pregunta!</legend>
   </fieldset>
+</form>
 <div id="clear"></div>
 <p>
-  Renombrar encuesta
+  Renombrar encuesta(
   <strong id="show"> Mostrar </strong>
-  <strong id="hide"></strong>Formulario
+  <strong id="hide"></strong>Formulario )
 </p>
 <br>
 <%= erb :'survey/_edit', :layout => false %>

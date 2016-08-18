@@ -122,3 +122,15 @@ a:active {
   font-family: monospace;
   color: white;
 }
+
+.question_input {
+  width: 95%;
+}
+
+.fieldset_legend{
+  color: #330099;
+  font-family: "Lucida Console";
+  font-style: italic;
+  background: transparent;
+  background: linear-gradient( transparent, rgba(225,225,225,0.2));
+}

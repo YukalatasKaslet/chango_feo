@@ -18,7 +18,7 @@ get '/survey/:id' do
   @survey = Survey.find(params[:id])
   @questions  = @survey.questions
   if @survey != nil
-    erb :'survey/_survey'
+    erb :'survey/survey'
   else
     redirect to('/Error')
   end

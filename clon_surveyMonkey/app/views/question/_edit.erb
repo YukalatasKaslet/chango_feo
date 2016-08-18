@@ -1,0 +1,17 @@
+<div id="div_hide" >
+  <fieldset id="form_submit">
+    <legend class="fieldset_legend" >
+      <strong>Editar Pregunta</strong>
+    </legend>
+    <form action="/question/<%= @question.id %>" method="POST" >
+      <input type="hidden" name="_method" value="PUT">
+      <textarea name="question[body]" placeholder="Editar Pregunta"><%= @question.body %></textarea><br>
+      <input class="chulada_btn" type="submit" value="Editame!">    
+    </form>
+    <form action="/question/<%= @question.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="chulada_btn" type="submit" value="Borrar!">
+    </form>
+  </fieldset>
+</div>
+<div id="clear"></div>

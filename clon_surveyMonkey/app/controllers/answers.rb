@@ -1,12 +1,13 @@
 #CREATE
 post '/new_answer/:question_id' do
-  answer = Answer.create(params[:answer])
+  answer = Answer.new(params[:answer])
   question = Question.find(params[:question_id])
-  user = User.find(id: current_user.id )
-  if answer && question
-    question.answers << answer
-    user.answers_written << answer
-    redirect to("/question/#{question.id}")
+  user = User.find(current_user.id )
+  if answer && question && user
+    if answer.save
+      question.answers << answer
+      redirect to("/question/#{question.id}")
+    end
   else
     redirect to('/Error')
   end

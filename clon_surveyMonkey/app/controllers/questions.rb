@@ -22,9 +22,12 @@ end
 #READ
 get '/question/:id' do
   @question = Question.find(params[:id])
-  @answers  = @question.answers
+  answers  = @question.answers
   if @question != nil
-    erb :'question/_question'
+    if answers != nil
+      @answers = answers
+    end
+      erb :'question/question'
   else
     redirect to('/Error')
   end
@@ -33,7 +36,7 @@ end
 #UPDATE
 get '/question/:id/edit' do
   @question = Question.find(params[:id]) 
-  erb :'question/edit'
+  erb :'question/_edit'
 end
 
 put '/question/:id' do
