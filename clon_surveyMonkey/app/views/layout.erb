@@ -19,14 +19,17 @@
 <body>
   <nav class="nav_bar">
     <% if current_user %>
-    <div id="login_sing">
-      <a class="login_sing" href="/logout">Logout</a>|<a  class="login_sing" href="/users/<%= current_user.id%>">Profile</a>
-    </div>
+      <div id="login_sing">
+        <a class="login_sing" href="/logout">Logout</a>|<a  class="login_sing" href="/users/<%= current_user.id%>">Profile</a>
+      </div>
+        <a href="/">Index</a>
+      <div>
+      </div>
     <% else %>
-    <div id="login_sing">
-      <a class="login_sing" href="/login">Login</a>|<a  class="login_sing" href="/signup">Signup</a>
-    </div>
-    <br>
+      <div id="login_sing">
+        <a class="login_sing" href="/login">Login</a>|<a  class="login_sing" href="/signup">Signup</a>
+      </div>
+      <br>
     <%end%>
   </nav>
   <div class="container">

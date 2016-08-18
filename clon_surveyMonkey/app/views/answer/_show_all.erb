@@ -1,5 +1,5 @@
 <% @answers.each do |answer| %>
   <ul>
-    <li><%= answer.body %>
+    <li><a href="/answer/<%= answer.id %>"><%= answer.body %></a></li>
   </ul>
 <% end %>

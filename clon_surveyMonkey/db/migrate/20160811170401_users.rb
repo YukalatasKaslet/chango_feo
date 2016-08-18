@@ -29,7 +29,7 @@ class Users < ActiveRecord::Migration
     end
 
     create_table :answers do |t|
-      t.belongs_to :question #se crea la llave foránea question_id
+      t.belongs_to :question, index: true #se crea la llave foránea question_id
       t.string     :body, null: false
       t.timestamp
     end    

@@ -39,7 +39,7 @@ $(document).ready(function() {
         var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
         //var fName = $("<input type=\"text\" class=\"fieldname\" />");
           //name=\"question[body"+ intId +"]\" 
-        var fName = $("<input class=\"question_input\" type=\"text\" name=\"question[body]\"n placeholder=\"Pregunta!\"><div id=\"clear\"></div><input class=\"chulada_btn\" type=\"submit\" value=\"Crear\">");
+        var fName = $("<input class=\"question_input\" type=\"text\" name=\"question[body]\"n placeholder=\"Pregunta!\"><div id=\"clear\"></div><input class=\"chulada_btn\" type=\"submit\" value=\"Guardar\">");
         //var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
         var removeButton = $("<input type=\"button\" class=\"remove chulada_btn\" value=\"Quitar\" /><div id=\"clear\"></div>");
         removeButton.click(function() {

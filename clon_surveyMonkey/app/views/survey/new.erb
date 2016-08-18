@@ -1,0 +1,10 @@
+<fieldset id="form_submit">
+  <legend class="fieldset_legend" >
+    <strong>Nueva Encuesta</strong>
+  </legend>
+  <form action="/new_survey/<%= current_user.id%>" method="POST">
+    <textarea name="survey[name]" placeholder="Ingresa el nombre de tu encuesta"></textarea><br>
+    <input class="chulada_btn" type="submit" value="Guardar">
+  <end>
+</fieldset>
+<div id="clear"></div>

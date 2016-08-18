@@ -1,12 +1,13 @@
 #CREATE
 post '/new_answer/:question_id' do
   answer = Answer.new(params[:answer])
-  question = Question.find(params[:question_id])
+  question_parent = Question.find(params[:question_id])
   user = User.find(current_user.id )
-  if answer && question && user
+  if answer && question_parent && user
     if answer.save
-      question.answers << answer
-      redirect to("/question/#{question.id}")
+      answer.update(question_id: question_parent.id)
+      question_parent.answers << answer
+      redirect to("/question/#{question_parent.id}")
     end
   else
     redirect to('/Error')
@@ -26,7 +27,7 @@ end
 #UPDATE
 get '/answer/:id/edit' do
   @answer = Answer.find(params[:id]) 
-  erb :'answer/edit'
+  erb :'answer/_edit'
 end
 
 put '/answer/:id' do

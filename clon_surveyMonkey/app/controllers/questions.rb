@@ -52,6 +52,7 @@ end
 #DELETE
 delete '/question/:id' do
   question = Question.find(params[:id])
+  survey_id = question.survey.id
   question.destroy
-  redirect to ("/users/#{current_user.id}")
+  redirect to ("/users/#{survey_id}")
 end
