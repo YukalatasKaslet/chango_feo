@@ -1,13 +1,7 @@
 <p>
   <strong><%= @question.body %></strong>
 </p>
-<br>
-<p>
-  Editar pregunta(
-  <strong id="show"> Mostrar </strong>
-  <strong id="hide"></strong>Formulario )
-</p>
-<%= erb :'question/_edit', :layout => false %>
+<%= erb :'answer/_show_all', :layout => false %>
 <div id="clear"></div>
 <br>
 <fieldset id="form_submit">
@@ -19,5 +13,9 @@
     <input class="chulada_btn" type="submit" value="Responder">
   </form>
 </fieldset>
-
-<%= erb :'answer/_show_all', :layout => false %>
+<p>
+  Editar pregunta(
+  <strong id="show"> Mostrar </strong>
+  <strong id="hide"></strong>Formulario )
+</p>
+<%= erb :'question/_edit', :layout => false %>

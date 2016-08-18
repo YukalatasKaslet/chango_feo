@@ -34,7 +34,8 @@ put '/answer/:id' do
   answer = Answer.find(params[:id])
   if answer != nil
     answer.update(params[:answer])
-    redirect to("/answer/#{answer.id}")
+    question_id = answer.questions[0].id
+    redirect to("/question/#{question_id}")
   else
     redirect to ('/Error')
   end
@@ -43,6 +44,7 @@ end
 #DELETE
 delete '/answer/:id' do
   answer = Answer.find(params[:id])
+  question_id = answer.questions[0].id
   answer.destroy
-  redirect to ("/users/#{current_user.id}")
+  redirect to ("/question/#{question_id}")
 end
