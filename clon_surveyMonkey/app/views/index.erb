@@ -1,13 +1,11 @@
 <% if current_user %>
 Usuario:<%= current_user.name %><br>
-<a href="/users/<%= current_user.id %>">Volver al Perfil</a>
 <% end %>
-<div>
-  <% if @survey %>
-  <ul>
-    <% @survey.each do |s| %>
-    <li>@s.name</li>
-    <% end %>
-  </ul>
-  <% end %>  
-</div>  
+<br>
+<p><a href="/new_survey">Crear Encuesta</a>
+<p>
+  Encuestas realizadas
+  <strong id="show"> Mostrar </strong>
+  <strong id="hide"></strong>
+</p>
+<%= erb :'survey/_show_all', :layout => false%>

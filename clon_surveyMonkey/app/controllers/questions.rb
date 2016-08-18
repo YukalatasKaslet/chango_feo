@@ -1,4 +1,13 @@
 #CREATE
+get '/new_question/:survey_id'do
+  @survey = Survey.find(params[:survey_id])
+  if @survey
+    erb :'question/new'
+  else
+    redirect to('/Error')
+  end
+end
+
 post '/new_question/:survey_id' do
   question = Question.create(params[:question])
   survey = Survey.find(params[:survey_id])

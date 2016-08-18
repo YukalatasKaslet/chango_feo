@@ -1,4 +1,7 @@
 #CREATE
+get '/new_survey' do
+  erb :'survey/new'
+end
 post '/new_survey/:user_id' do
   survey = Survey.create(params[:survey])
   user = User.find(params[:user_id])
@@ -41,5 +44,5 @@ end
 delete '/survey/:id' do
   survey = Survey.find(params[:id])
   survey.destroy
-  redirect to ("/users/#{current_user.id}")
+  redirect to ("/user/#{current_user.id}")
 end

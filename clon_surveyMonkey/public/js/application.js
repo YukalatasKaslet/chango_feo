@@ -6,13 +6,13 @@ $(document).ready(function() {
   $( document.body ).find("#show").click(function() {
     $( "#div_hide" ).fadeIn( "slow" );
     $( this ).empty();
-    $( document.body ).find( "#hide" ).append( "<strong> Ocultar </strong>" );
+    $( document.body ).find( "#hide" ).append( " Ocultar " );
   });
 
   $( document.body ).find("#hide").click(function() {
     $( "#div_hide" ).fadeOut( "slow" );
     $( this ).empty();
-    $( document.body ).find( "#show" ).append( "<strong> Mostrar Formulario </strong>" );
+    $( document.body ).find( "#show" ).append( " Mostrar " );
   });
 
   $( document.body ).find(".chulada_btn").each(function(){
@@ -31,4 +31,28 @@ $(document).ready(function() {
       }
     );
   });
-});
+
+//$(function(){}) shortcut ready document
+
+    $("#add").click(function() {
+        var intId = $("#add_field div").length + 1;
+        var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
+        //var fName = $("<input type=\"text\" class=\"fieldname\" />");
+        var fName = $("<form action=\"/new_question/<%= @survey.id%>\" method=\"POST\"><input type=\"text\" name=\"question[body"+ intId +"]\" placeholder=\"Pregunta!\"><div id=\"clear\"></div><input class=\"chulada_btn\" type=\"submit\" value=\"Preguntar\"><end>");
+        //var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
+        var removeButton = $("<input type=\"button\" class=\"remove chulada_btn\" value=\"Remove\" /><div id=\"clear\"></div>");
+        removeButton.click(function() {
+            $(this).parent().remove();
+        });
+        fieldWrapper.append(fName);
+        //fieldWrapper.append(fType);
+        fieldWrapper.append(removeButton);
+        $("#add_field").append(fieldWrapper);
+    });    
+
+});//document.ready
+  
+
+
+
+//Comentario para hacer espacios xD

@@ -1,0 +1,13 @@
+<div id="div_hide">
+  <% if @surveys %>
+    <ul>
+      <% @surveys.each do |s| %>
+        <li>
+          <a href="/survey/<%= s.id %>">
+            <%= s.name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>  
+</div>  

@@ -15,8 +15,17 @@
   </ul>
 </div>
 <div id="clear"></div>
-<p>Editar encuesta </p>
-<p id="show" class="chulada_btn"> Mostrar Formulario </p>
-<p id="hide" class="chulada_btn"></p>
+
+<input class="chulada_btn" type="button" value="Add a question" class="add" id="add" />
+<div id="clear"></div>
+  <fieldset id="add_field">
+      <legend>Añade una Pregunta!</legend>
+  </fieldset>
+<div id="clear"></div>
+<p>
+  Renombrar encuesta
+  <strong id="show"> Mostrar </strong>
+  <strong id="hide"></strong>Formulario
+</p>
 <br>
 <%= erb :'survey/_edit', :layout => false %>

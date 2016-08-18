@@ -26,7 +26,7 @@ th {
   width: 90%;
   height: 30%;
   background-color: #9607FF;
-  background: linear-gradient(rgba(150,7,255,0.4), #FFFFFF); /* Standard syntax */
+  background: linear-gradient(rgba(135,109,251,0.6), rgba(106,86,197,0.1)); /* Standard syntax */
   border-radius: 5px; 
 } 
 
