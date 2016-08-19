@@ -1,5 +1,5 @@
 <div id="div_hide">
-  <% if @surveys %>
+  <% if @surveys != [] %>
     <ul>
       <% @surveys.each do |s| %>
         <li>
@@ -9,5 +9,7 @@
         </li>
       <% end %>
     </ul>
+  <% else %>
+  <p><strong>No hay encuestas de otros usuarios :(</strong></p>
   <% end %>  
 </div>  

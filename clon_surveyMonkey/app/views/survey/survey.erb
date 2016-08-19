@@ -1,31 +1,66 @@
 <div>
   <strong><%= @survey.name %></strong>
-  <ul>
-  <% @questions.each do |q| %>
-    <li><a href="/question/<%= q.id %>"><%= q.body %></a></li>
-    <% answers = q.answers %>
-      <ul>
-        <% answers.each do |a| %>
-        <li><%= a.body %></li>
-        <% end %>
-      </ul>
+<% if current_user.id == @survey.user.id %>
+    <ul>
+    <% @questions.each do |q| %>
+      <li><a href="/question/<%= q.id %>"><%= q.body %></a></li>
+      <% answers = q.answers %>
+        <ul>
+          <% answers.each do |a| %>
+          <li><%= a.body %></li>
+          <% end %>
+        </ul>
+    <br>
+    <br>      
+    <% end %>
+    </ul>
+  </div>
+  <div id="clear"></div>
+  <input id="add" class="chulada_btn add" type="button" value="Añade una Pregunta!">
+  <div id="clear"></div>
+  <form action="/new_question/<%= @survey.id%>" method="POST">
+    <fieldset id="add_field">
+    </fieldset>
+  </form>
+  <div id="clear"></div>
+  <p>
+    Renombrar encuesta(
+    <strong id="show"> Mostrar </strong>
+    <strong id="hide"></strong>Formulario )
+  </p>
   <br>
-  <br>      
-  <% end %>
-  </ul>
-</div>
+  <%= erb :'survey/_edit', :layout => false %>
+
+<% else %>
+  <div class="responder_encuesta">
+    <form action="/new_survey_answered/<%= current_user.id%>" method="POST"> 
+      <ul>
+      <% @questions.each do |q| %>
+        <li><%= q.body %></a></li>
+        <% answers = q.answers %>
+          <ul>
+            <% answers.each do |a| %>
+            <li><input type="radio" name="survey[<%= q.id %>]" value="<%= a.body %>"><%= a.body %></li>
+            <% end %>
+          </ul>
+        <hr>
+      <br>
+      <br>      
+      <% end %>
+      </ul>
+      <input class="chulada_btn" type="submit" value="Guardar">
+    </form>
+  </div>
+<% end %>
 <div id="clear"></div>
-<input id="add" class="chulada_btn add" type="button" value="Añade una Pregunta!">
-<div id="clear"></div>
-<form action="/new_question/<%= @survey.id%>" method="POST">
-  <fieldset id="add_field">
-  </fieldset>
-</form>
-<div id="clear"></div>
-<p>
-  Renombrar encuesta(
-  <strong id="show"> Mostrar </strong>
-  <strong id="hide"></strong>Formulario )
-</p>
-<br>
-<%= erb :'survey/_edit', :layout => false %>
+
+
+
+
+
+
+
+
+
+
+<!-- -->

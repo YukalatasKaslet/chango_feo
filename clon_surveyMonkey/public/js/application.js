@@ -21,13 +21,13 @@ $(document).ready(function() {
         $(this).css({ 
           "background-color": "#a692ff",
           "border": "1px dotted #FFFFFF"
-           });
+        });
       },
       function(){
         $(this).css({
           "background-color": "transparent",
           "border": "1px solid #9670FF"
-          });
+        });
       }
     );
   });

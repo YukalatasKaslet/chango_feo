@@ -1,9 +1,13 @@
 <% if logged_in? %>
   Usuario:<%= current_user.name %><br><br>
+  <a href="/new_survey">Crear Encuesta</a>
   <p>
-    <a href="/new_survey">Crear Encuesta</a>
+    Mis encuestas:
+  </p>
+  <%= erb :'survey/_user_show_all', :layout => false%>
+  <br>
   <p>
-    Encuestas realizadas
+    Encuestas para contestar
     <strong id="show"> Mostrar </strong>
     <strong id="hide"></strong>
   </p>

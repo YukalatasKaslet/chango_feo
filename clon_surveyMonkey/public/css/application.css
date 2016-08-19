@@ -11,6 +11,13 @@ th {
 }
 
 /* Codiguillo Laurita */
+hr {
+  background-color: transparent;
+  height: 5px;
+  border-radius: 3px;
+  width: 100%;
+}
+
 #clear {
   clear: left;
   height: 1px;
@@ -63,6 +70,14 @@ th {
   cursor: pointer;
 }
 
+.responder_encuesta ul li{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+ul li{
+  list-style-type: square; 
+}
 /*
 a:link - a normal, unvisited link
 a:visited - a link the user has visited

@@ -1,0 +1,15 @@
+<div>
+  <% if @surveys_user !=[] %>
+    <ul>
+      <% @surveys_user.each do |survey| %>
+        <li>
+          <a href="/survey/<%= survey.id %>">
+            <%= survey.name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+  <p><strong>Aún no creas encuestas!!!</strong></p>
+  <% end %> 
+</div>  
