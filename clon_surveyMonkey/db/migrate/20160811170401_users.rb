@@ -6,7 +6,8 @@ class Users < ActiveRecord::Migration
       #has_secure_password
       #Adds methods to set and authenticate against a BCrypt password.
       #This mechanism requires you to hace a << password_digest >> attribute
-      t.string    :password_digest, nul: false 
+      t.string    :password_digest, nul: false
+       
     end
 
     create_table :surveys do |t|
@@ -21,17 +22,21 @@ class Users < ActiveRecord::Migration
       t.timestamp
     end
 
-    create_table :choices do |t|
-      t.belongs_to :question#se crea la llave foránea question_id
-      t.belongs_to :answer  #se crea la llave foránea answer_id
-      t.boolean    :check, default: false
-      t.timestamp
+    create_table :options do |t|
+      t.belongs_to  :question
+      t.string      :body
     end
 
     create_table :answers do |t|
-      t.belongs_to :question, index: true #se crea la llave foránea question_id
-      t.string     :body, null: false
-      t.timestamp
-    end    
+      t.belongs_to :user
+      t.belongs_to :option
+    end
+
+    create_table :completed_surveys do |t|
+      t.belongs_to :user
+      t.belongs_to :survey
+    end
+
+
   end
 end

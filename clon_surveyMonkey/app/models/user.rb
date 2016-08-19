@@ -1,7 +1,17 @@
 class User < ActiveRecord::Base
   include BCrypt
   # Remember to create a migration!
+  #Asociaciones
   has_many  :surveys
+  has_many  :answers
+
+  has_many  :completed_surveys
+  has_many  :taken_survey, through: :completed_surveys, source: :survey
+
+  has_many  :options, through: :answers
+  
+
+  #Validaciones
   validates :name, :password, presence: true
   validates :email, presence: true, uniqueness: true
 
