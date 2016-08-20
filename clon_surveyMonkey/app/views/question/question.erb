@@ -1,15 +1,15 @@
 <p>
   <strong><%= @question.body %></strong>
 </p>
-<%= erb :'answer/_show_all', :layout => false %>
+<%= erb :'option/_show_all', :layout => false %>
 <div id="clear"></div>
 <br>
 <fieldset id="form_submit">
   <legend class="fieldset_legend" >
     <strong>Ingresa su Respuesta</strong>
   </legend>
-  <form action="/new_answer/<%= @question.id %>" method="POST">
-    <textarea name="answer[body]" placeholder="Ingresa una opción a tu pregunta"></textarea><br>
+  <form action="/new_option/<%= @question.id %>" method="POST">
+    <textarea name="option[body]" placeholder="Ingresa una opción a tu pregunta"></textarea><br>
     <input class="chulada_btn" type="submit" value="Responder">
   </form>
 </fieldset>

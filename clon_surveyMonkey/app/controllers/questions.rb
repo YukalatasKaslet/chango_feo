@@ -22,10 +22,10 @@ end
 #READ
 get '/question/:id' do
   @question = Question.find(params[:id])
-  answers  = @question.answers
+  options  = @question.options
   if @question != nil
-    if answers != nil
-      @answers = answers
+    if options != nil
+      @options = options
     end
       erb :'question/question'
   else
@@ -54,5 +54,5 @@ delete '/question/:id' do
   question = Question.find(params[:id])
   survey_id = question.survey.id
   question.destroy
-  redirect to ("/users/#{survey_id}")
+  redirect to ("/survey/#{survey_id}")
 end

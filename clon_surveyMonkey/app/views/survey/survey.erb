@@ -4,10 +4,10 @@
     <ul>
     <% @questions.each do |q| %>
       <li><a href="/question/<%= q.id %>"><%= q.body %></a></li>
-      <% answers = q.answers %>
+      <% options = q.options %>
         <ul>
-          <% answers.each do |a| %>
-          <li><%= a.body %></li>
+          <% options.each do |op| %>
+          <li><%= op.body %></li>
           <% end %>
         </ul>
     <br>
@@ -37,10 +37,10 @@
       <ul>
       <% @questions.each do |q| %>
         <li><%= q.body %></a></li>
-        <% answers = q.answers %>
+        <% options = q.options %>
           <ul>
-            <% answers.each do |a| %>
-            <li><input type="radio" name="survey[<%= q.id %>]" value="<%= a.body %>"><%= a.body %></li>
+            <% options.each do |op| %>
+            <li><input type="radio" name="survey[<%= q.id %>]" value="<%= op.body %>"><%= op.body %></li>
             <% end %>
           </ul>
         <hr>
